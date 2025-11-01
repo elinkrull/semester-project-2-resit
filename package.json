@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "sass": "^1.93.3"
+  },
+  "scripts": {
+    "sass": "sass --watch scss/custom.scss css/style.css"
   }
 }
