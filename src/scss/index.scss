@@ -13,6 +13,15 @@ $primary: rgba(235, 238, 234, 1);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+.nav-link {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #000000;
+}
+
 //Pet listing/homepage
 
 .search-container {
