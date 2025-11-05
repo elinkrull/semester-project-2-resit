@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AdoptAPet | Home</title>
+	<meta name="description"
+		content="This is the homepage for a pet adoption website. Here you can see all the pets listing and search through the pets that are avaliable for adopoion.">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="dist/css/index.css">
+	<script defer type="module" src="./script/displayPets.mjs"></script>
+
+<body class="min-vh-100 bg-primary">
+
+	<header>
+		<!-- Navigation bar starts her -->
+		<nav class="navbar navbar-expand-lg navbar-light px-4">
+			<div class="container-fluid">
+				<a class="navbar-brand ms-3 fw-bold" id="logo" href="#">AdoptAPet!</a>
+				<button class="navbar-toggler m-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+					<div class="navbar-nav m-4">
+						<a class="nav-item nav-link" href="#">Home</a>
+						<a class="nav-item nav-link" href="#">View all Pets</a>
+						<a class="nav-item nav-link" href="#">Add a pet for adoption</a>
+						<a class="nav-item nav-link" href="#">Register</a>
+						<a class="nav-item nav-link" href="#">Login</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- Navigation bar ends her -->
+	</header>
+
+	<main>
+		<!-- Search bar starts here -->
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="search-container">
+						<input type="text" id="search-input" class="form-control search-input"
+							placeholder="Search for any name or breed...">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Search bar ends here -->
+		<div>
+
+			<h2 class="mt-5 ms-5">All Pets</h2>
+
+			<div id="display-pets-container" class="row g-4"></div>
+			<div class="text-center my-4">
+				<button id="view-more-btn" class="btn border-black bg-secondary text-primary btn-lg px-4">
+					View More
+				</button>
+			</div>
+		</div>
+
+
+
+	</main>
+
+	<footer class="py-4 mt-5">
+		<div class="container text-center">
+			<p class="mb-0">© 2025 AdoptAPet</p>
+		</div>
+	</footer>
+
+</body>
+
+</html>

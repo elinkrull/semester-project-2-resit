@@ -1,0 +1,57 @@
+@import "../../node_modules/bootstrap/scss/functions";
+
+//Override Bootstrap variables
+$primary: rgba(235, 238, 234, 1);
+$secondary: rgba(63, 92, 75, 1);
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+//Custom styles
+#logo {
+  color: rgba(63, 92, 75, 1);
+  font-size: 55px;
+}
+
+.nav-link {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #000000;
+}
+
+//Pet listing/homepage
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  height: 50px;
+  border-radius: 30px;
+  padding-left: 35px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#display-pets-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+img.rounded-circle {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+img.rounded-circle:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 992px) {
+  #display-pets-container p {
+    font-size: 1.1rem;
+  }
+}

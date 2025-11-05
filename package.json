@@ -6,6 +6,8 @@
     "sass": "^1.93.3"
   },
   "scripts": {
-    "sass": "sass --watch scss/custom.scss css/style.css"
+    "sass": "sass --quiet-deps --watch src/scss:dist/css",
+    "build": "sass --quiet-deps src/scss:dist/css",
+    "watch": "sass --quiet-deps --watch src/scss:dist/css & live-server"
   }
 }
