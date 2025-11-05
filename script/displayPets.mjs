@@ -41,7 +41,6 @@ function attachSearch() {
   searchInput.addEventListener("input", (e) => {
     const query = e.target.value.toLowerCase().trim();
 
-    // If search is cleared → back to normal list (first 20)
     if (query === "") {
       isSearching = false;
       renderPets(allPets);
@@ -64,7 +63,7 @@ function attachSearch() {
       );
     });
 
-    // Hide the button during search
+    // Hide view more btn during search
     if (viewMoreBtn) viewMoreBtn.style.display = "none";
 
     if (filtered.length === 0) {
@@ -82,12 +81,11 @@ function attachViewMore() {
   if (!button) return;
 
   button.addEventListener("click", () => {
-    // If searching, ignore clicks
     if (isSearching) return;
 
     visibleCount += 20;
     renderPets(allPets.slice(0, visibleCount));
-    updateViewMoreVisibility(); // hide when no more items
+    updateViewMoreVisibility();
   });
 }
 
@@ -95,7 +93,6 @@ function updateViewMoreVisibility() {
   const button = document.getElementById("view-more-btn");
   if (!button) return;
 
-  // Button is only relevant when not searching and more items exist
   const hasMore = !isSearching && visibleCount < allPets.length;
   button.style.display = hasMore ? "inline-block" : "none";
 }
