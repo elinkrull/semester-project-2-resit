@@ -17,10 +17,13 @@ export function renderPets(list) {
 
     return `
 			<div class="col-12 col-sm-4 col-md-3 col-lg-2-4 text-center mb-5">
+			   <a href="./singlePet/index.html?id=${encodeURIComponent(id)}" 
+       class="text-decoration-none text-dark d-block">
 				 <img src="${imageUrl}" alt="${altText}" class="img-fluid rounded-circle shadow-sm border"
 					 style="width: 180px; height: 180px; object-fit: cover;"
 				 />
 					 <p class="mt-2 fw-bold">${name}</p>
+					 </a>
 			 </div>`;
   });
 
