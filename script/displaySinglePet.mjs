@@ -29,13 +29,23 @@ function renderSinglePet(pet) {
   // ── outer container
   const outer = el("div", "container py-4");
 
-  // top-right action
-  const actions = el("div", "d-flex justify-content-end mb-3");
-  const editBtn = el("a", "btn btn-outline-dark btn-sm", {
+  // top-right action buttons (stacked)
+  const actions = el("div", "d-flex flex-column align-items-end gap-2 mb-4");
+
+  // Edit/Delete button
+  const editBtn = el("a", "btn btn-outline-dark btn-sm w-auto", {
     href: `../update-pet.html?id=${encodeURIComponent(pet.id)}`,
   });
   editBtn.textContent = "Edit/Delete Pet";
-  actions.append(editBtn);
+
+  // Close button
+  const closeBtn = el("a", "btn btn-outline-dark btn-sm w-auto", {
+    href: "../index.html",
+  });
+  closeBtn.textContent = "Close";
+
+  // Add both
+  actions.append(closeBtn, editBtn);
 
   // main row
   const row = el("div", "row align-items-start gy-4");
@@ -48,14 +58,18 @@ function renderSinglePet(pet) {
     alt: altText,
   });
   heroWrap.append(img);
+
   const shareBtn = el("button", "btn btn-outline-dark mt-4 px-4", {
     type: "button",
   });
-  shareBtn.append(document.createTextNode("Share"));
+
+  const icon = el("span", "bi bi-share me-2");
+  const text = document.createTextNode("Share");
+
+  shareBtn.append(icon, text);
   left.append(heroWrap, shareBtn);
 
-  // right: specs
-  const right = el("div", "col-12 col-md-7");
+  const right = el("div", "col-12 col-md-7 ps-md-5");
   const dl = el("dl", "pet-specs");
 
   addSpecRow(dl, "Name", pet.name);
@@ -67,12 +81,10 @@ function renderSinglePet(pet) {
 
   right.append(dl);
 
-  // assemble
   row.append(left, right);
   outer.append(actions, row);
   container.append(outer);
 
-  // Share behavior
   shareBtn.addEventListener("click", async () => {
     try {
       if (navigator.share) {
