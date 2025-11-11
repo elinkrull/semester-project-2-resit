@@ -1,5 +1,7 @@
 import { login } from "./auth/login.mjs";
 
+console.log("login.mjs loaded");
+
 const form = document.getElementById("login-form");
 
 if (!form) {
