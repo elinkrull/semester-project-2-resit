@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_REGISTER, API_AUTH } from "../constants.mjs";
+import { API_BASE_URL, API_REGISTER, API_AUTH } from "../api/constants.mjs";
 
 export async function register(name, email, password) {
   const res = await fetch(API_BASE_URL + API_AUTH + API_REGISTER, {

@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_PETS } from "./constants.mjs";
+import { API_BASE_URL, API_PETS } from "./api/constants.mjs";
 
 //Fetch data from the API
 export async function getPets() {

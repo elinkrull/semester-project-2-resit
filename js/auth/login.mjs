@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_AUTH, API_LOGIN } from "../constants.mjs";
+import { API_BASE_URL, API_AUTH, API_LOGIN } from "../api/constants.mjs";
 import { save } from "../storage/save.mjs";
 
 export async function login(email, password) {
