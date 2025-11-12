@@ -9,7 +9,7 @@
 		content="This is the homepage for a pet adoption website. Here you can see all the pets listing and search through the pets that are avaliable for adopoion.">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="dist/css/index.css">
-	<script defer type="module" src="./script/displayPets.mjs"></script>
+	<script defer type="module" src="./js/displayPets.mjs"></script>
 </head>
 
 <body class="min-vh-100 bg-primary">
@@ -24,13 +24,27 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-					<div class="navbar-nav m-4">
-						<a class="nav-item nav-link" href="#">Home</a>
-						<a class="nav-item nav-link" href="#">View all Pets</a>
-						<a class="nav-item nav-link" href="#">Add a pet for adoption</a>
-						<a class="nav-item nav-link" href="#">Register</a>
-						<a class="nav-item nav-link" href="#">Login</a>
-					</div>
+					<ul class="navbar-nav m-4">
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html">View all Pets</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Add a pet for adoption</a>
+						</li>
+						<li class="nav-item">
+							<a id="nav-login" class="nav-link" href="../login/index.html">Login</a>
+						</li>
+						<li class="nav-item">
+							<a id="nav-register" class="nav-link" href="../register/index.html">Register</a>
+						</li>
+						<li class="nav-item d-none">
+							<button id="nav-logout" class="btn btn-outline-dark btn-sm">Log out</button>
+						</li>
+					</ul>
+
 				</div>
 			</div>
 		</nav>
