@@ -2,18 +2,18 @@ export function renderPets(list) {
   const feedContainer = document.querySelector("#display-pets-container");
   if (!feedContainer) return;
 
-  const petItemHTML = list.map((el) => {
-    const name = el.name;
-    const breed = el.breed;
-    const age = el.age;
-    const id = el.id;
-    const species = el.species;
-    const description = el.description;
+  const petItemHTML = list.map((pet) => {
+    const name = pet.name;
+    const breed = pet.breed;
+    const age = pet.age;
+    const id = pet.id;
+    const species = pet.species;
+    const description = pet.description;
     const imageUrl =
-      el.image && el.image.url
-        ? el.image.url
+      pet.image && pet.image.url
+        ? pet.image.url
         : "https://images.unsplash.com/photo-1701627788657-1a942dac8a7d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1035";
-    const altText = el.image?.alt || "Pet Image";
+    const altText = pet.image?.alt || "Pet Image";
 
     return `
 			<div class="col-12 col-sm-4 col-md-3 col-lg-2-4 text-center mb-5">

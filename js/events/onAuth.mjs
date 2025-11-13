@@ -1,9 +1,9 @@
 import { register } from "../auth/register.mjs";
 import { login } from "../auth/login.mjs";
 
-document
-  .getElementById("registration-form")
-  .addEventListener("submit", async (e) => {
+const form = document.getElementById("registration-form");
+if (form) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -25,3 +25,4 @@ document
       alert("Could not register. Please check your details and try again.");
     }
   });
+}

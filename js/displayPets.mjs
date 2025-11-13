@@ -9,6 +9,8 @@ export async function displayPets() {
   const pets = await getPets();
   allPets = Array.isArray(pets) ? pets : pets.data;
 
+  allPets.sort((a, b) => new Date(b.created) - new Date(a.created));
+
   renderPets(allPets.slice(0, visibleCount));
 
   attachSearch();
