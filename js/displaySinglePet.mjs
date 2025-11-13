@@ -1,4 +1,4 @@
-import { getPet } from "./api.mjs";
+import { getPet } from "./apiRoot.mjs";
 
 function el(tag, className, attrs = {}) {
   const node = document.createElement(tag);
@@ -32,11 +32,11 @@ function renderSinglePet(pet) {
   // top-right action buttons (stacked)
   const actions = el("div", "d-flex flex-column align-items-end gap-2 mb-4");
 
-  // Edit/Delete button
+  // Edit button
   const editBtn = el("a", "btn btn-outline-dark btn-sm w-auto", {
-    href: `../update-pet.html?id=${encodeURIComponent(pet.id)}`,
+    href: `../edit-pet/index.html?id=${encodeURIComponent(pet.id)}`,
   });
-  editBtn.textContent = "Edit/Delete Pet";
+  editBtn.textContent = "Edit Pet";
 
   // Close button
   const closeBtn = el("a", "btn btn-outline-dark btn-sm w-auto", {

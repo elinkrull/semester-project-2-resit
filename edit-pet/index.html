@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="../dist/css/index.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-	<script defer type="module" src="../js/edit-pet-form-handler.mjs"></script>
+	<script defer type="module" src="../js/handlers/editPetFormHandler.mjs"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-primary">
@@ -57,23 +57,23 @@
 		<form id="edit-pet-form" class="border rounded-4 shadow bg-white p-5 col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
 			<div class="form-group mb-3 px-5">
 				<label for="petName">Name</label>
-				<input type="text" class="form-control" id="petName" required>
+				<input type="text" class="form-control" id="petName">
 			</div>
 			<div class="form-group mb-3 px-5">
 				<label for="petSpecies">Species</label>
-				<input type="text" class="form-control" id="petSpecies" required>
+				<input type="text" class="form-control" id="petSpecies">
 			</div>
 			<div class="form-group mb-3 px-5">
 				<label for="petBreed">Breed</label>
-				<input type="text" class="form-control" id="petBreed" required>
+				<input type="text" class="form-control" id="petBreed">
 			</div>
 			<div class="form-group mb-3 px-5">
 				<label for="petAge">Age</label>
-				<input type="number" class="form-control" id="petAge" min="0" required>
+				<input type="number" class="form-control" id="petAge" min="0">
 			</div>
 			<div class="form-group mb-3 px-5">
 				<label for="petGender">Gender</label>
-				<select class="form-select" id="petGender" required>
+				<select class="form-select" id="petGender">
 					<option value="">Select gender</option>
 					<option value="Male">Male</option>
 					<option value="Female">Female</option>
@@ -82,7 +82,7 @@
 			</div>
 			<div class="form-group mb-3 px-5">
 				<label for="petSize">Size</label>
-				<select class="form-select" id="petSize" required>
+				<select class="form-select" id="petSize">
 					<option value="">Select size</option>
 					<option value="Small">Small</option>
 					<option value="Medium">Medium</option>
@@ -108,11 +108,11 @@
 			</div>
 			<div class="form-group mb-3 px-5">
 				<label for="petLocation">Location</label>
-				<input type="text" class="form-control" id="petLocation" required>
+				<input type="text" class="form-control" id="petLocation">
 			</div>
 			<div class="form-group mb-3 px-5">
 				<label for="petImageUrl">Image URL</label>
-				<input type="url" class="form-control" id="petImageUrl" required>
+				<input type="url" class="form-control" id="petImageUrl">
 			</div>
 			<div class="d-flex flex-column gap-3 mt-4 px-5">
 				<button type="button" class="btn btn-outline-danger w-100 d-none" id="delete-btn">Delete Pet</button>
