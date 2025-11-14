@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_AUTH, API_LOGIN } from "../api/constants.mjs";
 import { save } from "../storage/save.mjs";
 
-import { STORAGE_KEYS } from "../api/constants.mjs";
+import { STORAGE_KEY } from "../api/constants.mjs";
 
 export async function login(email, password) {
   const response = await fetch(API_BASE_URL + API_AUTH + API_LOGIN, {
@@ -30,8 +30,8 @@ export async function login(email, password) {
 
   const { accessToken: _ignored, ...userProfile } = data;
 
-  save(STORAGE_KEYS.token, accessToken);
-  save(STORAGE_KEYS.user, userProfile);
+  save(STORAGE_KEY.token, accessToken);
+  save(STORAGE_KEY.user, userProfile);
 
   console.log("Stored accessToken:", localStorage.getItem("accessToken"));
   console.log("Stored user:", userProfile);
