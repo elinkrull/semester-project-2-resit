@@ -1,4 +1,4 @@
-import { getPets } from "./api.mjs";
+import { getPets } from "./apiRoot.mjs";
 import { renderPets } from "./renderPets.mjs";
 
 let allPets = [];
