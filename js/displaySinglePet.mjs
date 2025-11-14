@@ -1,3 +1,4 @@
+import { deletePet } from "./api/deletePet.mjs";
 import { getPet } from "./apiRoot.mjs";
 
 function el(tag, className, attrs = {}) {
@@ -38,6 +39,10 @@ function renderSinglePet(pet) {
   });
   editBtn.textContent = "Edit Pet";
 
+  // Delete btn
+  const deleteBtn = el("button", "btn btn-outline-danger btn-sm w-auto");
+  deleteBtn.textContent = "Delete Pet";
+
   // Close button
   const closeBtn = el("a", "btn btn-outline-dark btn-sm w-auto", {
     href: "../index.html",
@@ -45,7 +50,7 @@ function renderSinglePet(pet) {
   closeBtn.textContent = "Close";
 
   // Add both
-  actions.append(closeBtn, editBtn);
+  actions.append(closeBtn, editBtn, deleteBtn);
 
   // main row
   const row = el("div", "row align-items-start gy-4");
@@ -98,6 +103,22 @@ function renderSinglePet(pet) {
         alert("Link copied!");
       }
     } catch {}
+  });
+
+  deleteBtn.addEventListener("click", async () => {
+    const confirmed = confirm("Are you sure you want to delete this pet?");
+    if (!confirmed) return;
+
+    try {
+      await deletePet(pet.id);
+      alert("Pet deleted successfully.");
+
+      // Redirect to homepage/pets listing
+      window.location.href = "../index.html";
+    } catch (error) {
+      console.error(error);
+      alert("Could not delete the pet.");
+    }
   });
 }
 
