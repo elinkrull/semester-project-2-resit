@@ -1,5 +1,6 @@
 import { getPets } from "./apiRoot.mjs";
 import { renderPets } from "./renderPets.mjs";
+import { updateNavbarAuth, setupLogout } from "./events/onAuth.mjs";
 
 let allPets = [];
 let visibleCount = 20;
@@ -118,3 +119,6 @@ function removeNoResultsMessage() {
 }
 
 displayPets();
+
+updateNavbarAuth();
+setupLogout();

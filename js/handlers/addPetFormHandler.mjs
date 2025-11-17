@@ -1,6 +1,7 @@
 import { load } from "../storage/load.mjs";
 import { addPet } from "../api/addPet.mjs";
 import { STORAGE_KEY } from "../api/constants.mjs";
+import { setupLogout, updateNavbarAuth } from "../events/onAuth.mjs";
 
 const token = load(STORAGE_KEY.token);
 if (!token) {
@@ -42,3 +43,6 @@ if (form) {
     }
   });
 }
+
+updateNavbarAuth();
+setupLogout();

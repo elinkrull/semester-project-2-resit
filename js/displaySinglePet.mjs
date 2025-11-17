@@ -1,5 +1,6 @@
 import { deletePet } from "./api/deletePet.mjs";
 import { getPet } from "./apiRoot.mjs";
+import { setupLogout, updateNavbarAuth } from "./events/onAuth.mjs";
 
 function el(tag, className, attrs = {}) {
   const node = document.createElement(tag);
@@ -147,3 +148,6 @@ async function displaySinglePet() {
 }
 
 displaySinglePet();
+
+updateNavbarAuth();
+setupLogout();

@@ -1,6 +1,5 @@
 import { login } from "./auth/login.mjs";
-
-console.log("login.mjs loaded");
+import { setupLogout, updateNavbarAuth } from "./events/onAuth.mjs";
 
 const form = document.getElementById("login-form");
 
@@ -27,3 +26,6 @@ if (!form) {
     }
   });
 }
+
+updateNavbarAuth();
+setupLogout();
