@@ -2,6 +2,7 @@ import { getPet } from "../apiRoot.mjs";
 import { load } from "../storage/load.mjs";
 import { editPet } from "../api/editPet.mjs";
 import { STORAGE_KEY } from "../api/constants.mjs";
+import { setupLogout, updateNavbarAuth } from "../events/onAuth.mjs";
 
 const token = load(STORAGE_KEY.token);
 if (!token) {
@@ -69,3 +70,6 @@ form.addEventListener("submit", async (event) => {
     alert("Could not update the pet.");
   }
 });
+
+updateNavbarAuth();
+setupLogout();
