@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mochiy+Pop+One&display=swap");
+
 @import "../../node_modules/bootstrap/scss/functions";
 
 //Override Bootstrap variables
@@ -8,10 +10,15 @@ $secondary: rgba(63, 92, 75, 1);
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-//Custom styles
-#logo {
-  color: rgba(63, 92, 75, 1);
-  font-size: 55px;
+// Custom styles
+body {
+  font-family: "Josefin Sans", sans-serif !important;
+}
+
+.logo-img {
+  height: 180px;
+  width: auto;
+  margin-left: 50px;
 }
 
 .nav-link {

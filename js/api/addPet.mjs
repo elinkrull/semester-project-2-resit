@@ -1,4 +1,4 @@
-import { setupLogout, updateNavbarAuth } from "../events/onAuth.mjs";
+import { API_BASE_URL, API_PETS } from "./constants.mjs";
 import { authFetch } from "./authFetch.mjs";
 
 export async function addPet(petData) {
