@@ -24,7 +24,15 @@ function renderSinglePet(pet) {
   if (!container) return;
   container.replaceChildren(); // clear without innerHTML
 
-  const imageUrl = pet.image?.url || "https://via.placeholder.com/500";
+  const toast = el("div", "copy-toast", {
+    id: "copy-toast",
+    text: "Link copied!",
+  });
+  container.append(toast);
+
+  const imageUrl = pet.image?.url?.trim()
+    ? pet.image.url.trim()
+    : "https://via.placeholder.com/500?text=No+Image";
   const altText = pet.image?.alt || pet.name || "Pet";
 
   // ── outer container
@@ -91,18 +99,23 @@ function renderSinglePet(pet) {
   container.append(outer);
 
   shareBtn.addEventListener("click", async () => {
+    const petUrl = location.href;
+    const toast = document.getElementById("copy-toast");
+
     try {
-      if (navigator.share) {
-        await navigator.share({
-          title: pet.name,
-          text: pet.description ?? "",
-          url: location.href,
-        });
-      } else {
-        await navigator.clipboard.writeText(location.href);
-        alert("Link copied!");
-      }
-    } catch {}
+      await navigator.clipboard.writeText(petUrl);
+
+      toast.textContent = "Link copied to clipboard!";
+      toast.classList.add("show");
+
+      setTimeout(() => toast.classList.remove("show"), 2000);
+    } catch (err) {
+      console.error("Clipboard failed:", err);
+
+      toast.textContent = "Could not copy the link.";
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2000);
+    }
   });
 
   deleteBtn.addEventListener("click", async () => {
