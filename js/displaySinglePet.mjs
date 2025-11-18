@@ -36,7 +36,10 @@ function renderSinglePet(pet) {
   const altText = pet.image?.alt || pet.name || "Pet";
 
   const outer = document.createElement("div");
-  outer.className = "container py-4";
+  outer.className = "container-lg py-5 d-flex justify-content-center";
+
+  const card = document.createElement("div");
+  card.className = "pet-detail-card";
 
   const actions = document.createElement("div");
   actions.className = "d-flex flex-column align-items-end gap-2 mb-4";
@@ -58,7 +61,7 @@ function renderSinglePet(pet) {
   actions.append(closeBtn, editBtn, deleteBtn);
 
   const row = document.createElement("div");
-  row.className = "row align-items-start gy-4";
+  row.className = "row align-items-center gy-4";
 
   const left = document.createElement("div");
   left.className = "col-12 col-md-5 text-center";
@@ -105,9 +108,9 @@ function renderSinglePet(pet) {
   addSpecRow(dl, "Description", pet.description ?? "No description available.");
 
   right.appendChild(dl);
-
   row.append(left, right);
-  outer.append(actions, row);
+  card.append(actions, row);
+  outer.appendChild(card);
   container.appendChild(outer);
 
   shareBtn.addEventListener("click", async () => {
