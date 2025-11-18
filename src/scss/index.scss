@@ -4,7 +4,7 @@
 
 //Override Bootstrap variables
 $primary: rgba(235, 238, 234, 1);
-$secondary: rgba(63, 92, 75, 1);
+$secondary: rgb(186, 202, 192);
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
@@ -13,17 +13,19 @@ $secondary: rgba(63, 92, 75, 1);
 // Custom styles
 body {
   font-family: "Josefin Sans", sans-serif !important;
+  padding-top: 160px;
 }
 
 .logo-img {
-  height: 180px;
+  height: 135px;
   width: auto;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .nav-link {
-  margin-left: 1rem;
+  margin-right: 3rem;
   font-weight: 500;
+  font-size: 1.4rem;
 }
 
 .nav-link:hover {
@@ -31,16 +33,36 @@ body {
   font-weight: 600;
 }
 
-//Pet listing/homepage
+#nav-logout {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
 
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  margin-right: 40px;
+}
+
+.navbar-toggler-icon {
+  transform: scale(1.6);
+  width: 2rem;
+  height: 2rem;
+}
+
+// Pet listing/homepage
 .search-container {
-  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 350px;
 }
 
 .search-input {
-  height: 50px;
+  height: 40px;
   border-radius: 30px;
-  padding-left: 35px;
+  padding-left: 30px;
+  margin-top: 30px;
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -56,6 +78,17 @@ img.rounded-circle {
 img.rounded-circle:hover {
   transform: scale(1.07);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#view-more-btn {
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#view-more-btn:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
 }
 
 @media (min-width: 992px) {
@@ -110,3 +143,24 @@ img.rounded-circle:hover {
 }
 
 //Create pet page
+
+// Other screensizes
+@media (max-with: 991px) {
+  .logo-img {
+    height: 80px;
+    width: auto;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .navbar-nav {
+      align-items: flex-end !important;
+    }
+
+    .navbar-nav .nav-item {
+      width: 100%;
+      text-align: right !important;
+      padding-right: 1rem;
+    }
+  }
+}

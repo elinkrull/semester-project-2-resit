@@ -1,5 +1,5 @@
 export function renderPets(list) {
-  const feedContainer = document.querySelector("#display-pets-container");
+  const feedContainer = document.getElementById("display-pets-container");
   if (!feedContainer) return;
 
   const placeholderUrl = "https://placehold.co/500x500?text=No+Image";
@@ -7,21 +7,19 @@ export function renderPets(list) {
   feedContainer.replaceChildren();
 
   const section = document.createElement("section");
-  section.className = "pets-section py-5";
+  section.className = "pets-section";
 
   const container = document.createElement("div");
   container.className = "container-lg d-flex justify-content-center";
 
   const row = document.createElement("div");
-  row.className =
-    "row justify-content-center align-items-start w-100 pets-grid";
+  row.className = "row g-4 pets-grid";
 
   list.forEach((pet) => {
     const name = pet.name ?? "Unnamed pet";
     const id = pet.id;
     const rawUrl = pet.image?.url;
     const altText = pet.image?.alt || "Pet image";
-
     const initialUrl =
       rawUrl && rawUrl.trim() !== "" ? rawUrl.trim() : placeholderUrl;
 
