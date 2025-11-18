@@ -2,24 +2,24 @@ import { deletePet } from "./api/deletePet.mjs";
 import { getPet } from "./apiRoot.mjs";
 import { setupLogout, updateNavbarAuth } from "./events/onAuth.mjs";
 
-function addSpecRow(dl, label, value) {
+function addSpecRow(parent, label, value) {
   const row = document.createElement("div");
   row.className = "row mb-3";
 
-  const dt = document.createElement("dt");
-  dt.className = "col-4 col-lg-3";
-  dt.textContent = `${label}:`;
+  const labelEl = document.createElement("div");
+  labelEl.className = "col-4 col-lg-3";
+  labelEl.textContent = `${label}:`;
 
-  const dd = document.createElement("dd");
-  dd.className = "col-8 col-lg-9";
-  dd.textContent = value ?? "—";
+  const valueEl = document.createElement("div");
+  valueEl.className = "col-8 col-lg-9";
+  valueEl.textContent = value ?? "—";
 
-  row.append(dt, dd);
-  dl.append(row);
+  row.append(labelEl, valueEl);
+  parent.append(row);
 }
 
 function renderSinglePet(pet) {
-  const container = document.querySelector("#single-pet-container");
+  const container = document.getElementById("single-pet-container");
   if (!container) return;
 
   container.replaceChildren();
@@ -61,7 +61,7 @@ function renderSinglePet(pet) {
   actions.append(closeBtn, editBtn, deleteBtn);
 
   const row = document.createElement("div");
-  row.className = "row align-items-center gy-4";
+  row.className = "row align-items-center gy-4 gx-5";
 
   const left = document.createElement("div");
   left.className = "col-12 col-md-5 text-center";
@@ -97,17 +97,25 @@ function renderSinglePet(pet) {
   const right = document.createElement("div");
   right.className = "col-12 col-md-7 ps-md-5";
 
-  const dl = document.createElement("dl");
-  dl.className = "pet-specs";
+  const specs = document.createElement("div");
+  specs.className = "pet-specs";
 
-  addSpecRow(dl, "Name", pet.name);
-  addSpecRow(dl, "Breed", pet.breed);
-  addSpecRow(dl, "Age", pet.age);
-  addSpecRow(dl, "Size", pet.size);
-  addSpecRow(dl, "Color", pet.color);
-  addSpecRow(dl, "Description", pet.description ?? "No description available.");
+  const nameHeading = document.createElement("h2");
+  nameHeading.className = "pet-name mb-4";
+  nameHeading.textContent = pet.name ?? "Unnamed pet";
 
-  right.appendChild(dl);
+  addSpecRow(specs, "Breed", pet.breed);
+  addSpecRow(specs, "Age", pet.age);
+  addSpecRow(specs, "Size", pet.size);
+  addSpecRow(specs, "Color", pet.color);
+  addSpecRow(
+    specs,
+    "Description",
+    pet.description ?? "No description available."
+  );
+
+  right.append(nameHeading, specs);
+
   row.append(left, right);
   card.append(actions, row);
   outer.appendChild(card);
