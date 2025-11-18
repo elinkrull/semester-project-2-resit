@@ -63,7 +63,7 @@ form.addEventListener("submit", async (event) => {
     await editPet(id, updatedPet);
     alert("Pet updated!");
     window.location.href = `../singlePet/index.html?id=${encodeURIComponent(
-      id
+      id,
     )}`;
   } catch (error) {
     console.error(error);

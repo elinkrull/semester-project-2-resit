@@ -111,7 +111,7 @@ function renderSinglePet(pet) {
   addSpecRow(
     specs,
     "Description",
-    pet.description ?? "No description available."
+    pet.description ?? "No description available.",
   );
 
   right.append(nameHeading, specs);
