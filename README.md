@@ -1,5 +1,7 @@
 # AdoptApet - Semester Project 2
-<img width="320" height="182" alt="SP2" src="https://github.com/user-attachments/assets/5d066740-dc51-4736-b950-d93798bac527" />
+
+![compressed_image](https://github.com/user-attachments/assets/20e232a5-4798-4e64-afb6-751f91d8b97c)
+
 
 ## Description
 
@@ -10,29 +12,29 @@ Working with the official API documentation, plan, design and build a modern fro
 ## User Stories
 
 Pets Listing Page
-As a user, I want to view a grid of available pets so I can easily browse them.
-As a user, I want to click on a pet to view more detailed information.
-As a user, I want to search for a pet.
+- As a user, I want to view a grid of available pets so I can easily browse them.
+- As a user, I want to click on a pet to view more detailed information.
+- As a user, I want to search for a pet.
 
 Specific Pet Page
-As a user, I want to see detailed information about the pet, that includes name, breed, age, size, color, and description.
-As a user, I want to have a shareable URL of the specific pet that gets copied to the clipboard when I click on a ‘share’ icon.
+- As a user, I want to see detailed information about the pet, that includes name, - breed, age, size, color, and description.
+- As a user, I want to have a shareable URL of the specific pet that gets copied to the clipboard when I click on a ‘share’ icon.
 
 Create Pet Page
-As an admin, I want to add new pets to the adoption list by filling out a form with details like name, breed, age, size, description, and image.
-This form should only be accessible to logged-in admins.
+- As an admin, I want to add new pets to the adoption list by filling out a form with details like name, breed, age, size, description, and image.
+- This form should only be accessible to logged-in admins.
 
 Edit Pet Page
-As an admin, I want to edit a pet's information through a form that updates the pet's details.
-As an admin, I want to delete a pet from the adoption list if necessary.
+- As an admin, I want to edit a pet's information through a form that updates the pet's details.
+- As an admin, I want to delete a pet from the adoption list if necessary.
 
 Account Login Page
-As an admin, I want to log in securely using my email and password.
+- As an admin, I want to log in securely using my email and password.
 
 Account Register Page
-As an admin, I want to register by providing my name, email and password.
+- As an admin, I want to register by providing my name, email and password.
 
-## Technical building tools
+## Built with
 
 JavaScript Logo Vanilla JavaScript
 Bootstrap Logo Bootstrap for CSS Framework
@@ -53,18 +55,23 @@ To get started with this project, follow these steps:
 
 1. Clone the repo:
 
-git clone https://github.com/elinkrull/semester-project-2-resit
+```bash
+git clone https://github.com/elinkrull/semester-project-2-resit.git
+```
 
 2. Install the dependencies
 
+```bash
 npm install bootstrap
+```
 
 ### Running
 
 To run the application:
 
+```bash
 npm run build
-
+```
 ## Authors
 
 Elin Thoen jakobsen
