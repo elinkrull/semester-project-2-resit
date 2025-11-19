@@ -1,6 +1,5 @@
 # AdoptApet - Semester Project 2
-
-To take the skills learned over the last two years and take on an extensive project where the finished product should reflect general development capabilities, in addition to visual and technical skills.
+<img width="320" height="182" alt="SP2" src="https://github.com/user-attachments/assets/5d066740-dc51-4736-b950-d93798bac527" />
 
 ## Description
 
