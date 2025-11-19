@@ -6,7 +6,7 @@ export async function deletePet(id) {
     `${API_BASE_URL}${API_PETS}/${encodeURIComponent(id)}`,
     {
       method: "DELETE",
-    }
+    },
   );
 
   if (!response.ok) {

@@ -73,7 +73,9 @@ body {
 }
 
 img.rounded-circle {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 img.rounded-circle:hover {
   transform: scale(1.07);
@@ -83,7 +85,9 @@ img.rounded-circle:hover {
 #view-more-btn {
   border-radius: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 #view-more-btn:hover {

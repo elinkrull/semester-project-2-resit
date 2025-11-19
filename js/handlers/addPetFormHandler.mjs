@@ -35,11 +35,11 @@ if (form) {
     console.log("Sending pet data:", petData);
 
     try {
-      const result = await addPet(petData);
+      await addPet(petData);
       alert("Pet added successfully!");
       window.location.href = "../index.html";
     } catch (error) {
-      alert("Failed to add pet. Please try again.");
+      alert(`Failed to add pet: ${error.message || "Please try again."}`);
     }
   });
 }

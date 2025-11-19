@@ -7,7 +7,7 @@ export async function editPet(id, petData) {
     {
       method: "PUT",
       body: JSON.stringify(petData),
-    }
+    },
   );
 
   if (!response.ok) {
