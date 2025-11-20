@@ -36,10 +36,10 @@ Account Register Page
 
 ## Built with
 
-- JavaScript Logo Vanilla JavaScript
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) Vanilla JavaScript
 - Bootstrap Logo Bootstrap for CSS Framework
 - Netlify Logo Netlify as a hosting service
-- Figma Logo Figma for design
+- ![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&style=for-the-badge) Figma for design
 - Trello Logo Trello for the Trello board
 - GitHub Project Logo GitHub Projects for the Ghantt Chart
 
