@@ -42,18 +42,18 @@ function renderSinglePet(pet) {
   card.className = "pet-detail-card";
 
   const actions = document.createElement("div");
-  actions.className = "d-flex flex-column align-items-end gap-2 mb-4";
+  actions.className = "d-flex flex-column align-items-end gap-4 mb-4";
 
   const editBtn = document.createElement("a");
   editBtn.className = "btn btn-outline-dark btn-sm w-auto";
   editBtn.id = "edit-btn";
   editBtn.href = `../edit-pet/index.html?id=${encodeURIComponent(pet.id)}`;
-  editBtn.textContent = "Edit Pet";
+  editBtn.textContent = "Edit";
 
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "btn btn-outline-danger btn-sm w-auto";
   deleteBtn.id = "delete-btn";
-  deleteBtn.textContent = "Delete Pet";
+  deleteBtn.textContent = "Delete";
 
   actions.append(deleteBtn, editBtn);
 

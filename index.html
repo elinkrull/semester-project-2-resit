@@ -21,25 +21,24 @@
 				<a class="navbar-brand" href="index.html">
 					<img src="/images/logo2.png" alt="AdoptaPet logo" class="logo-img" />
 				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<ul class="navbar-nav ms-auto text-end px-5">
 						<li class="nav-item">
 							<a class="nav-link" href="/index.html">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/index.html">View All Pets</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="/add-pet/index.html">Add A Pet For Adoption</a>
 						</li>
 						<li id="nav-register" class="nav-item">
-							<a class="nav-link" href="../register/index.html">Register</a>
+							<a class="nav-link" href="./register/index.html">Register</a>
 						</li>
 						<li id="nav-login" class="nav-item">
-							<a class="nav-link" href="../login/index.html">Login</a>
+							<a class="nav-link" href="./login/index.html">Login</a>
 						</li>
 						<li class="nav-item">
 							<button id="nav-logout" class="btn btn-outline-dark btn-sm">
@@ -58,7 +57,7 @@
 		<div class="container">
 			<div class="row justify-content-end">
 				<div class="search-container">
-					<input type="text" id="search-input" class="form-control search-input"
+					<input type="text" id="search-input" form-label="" class="form-control search-input"
 						placeholder="Search for any pet or breed..." />
 				</div>
 			</div>
@@ -67,7 +66,7 @@
 
 		<!-- Pets listing section starts here -->
 		<section class="pets-section">
-			<h2 class="text-center py-5">All Pets</h2>
+			<h1 class="text-center py-5">All Pets</h1>
 			<div id="display-pets-container" class="row g-4"></div>
 			<div class="text-center">
 				<button id="view-more-btn" class="btn bg-secondary px-4">
