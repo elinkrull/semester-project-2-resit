@@ -20,11 +20,11 @@ export async function login(email, password) {
   const json = await response.json();
   console.log("Login response data:", json);
 
+  const { accessToken, ...userProfile } = json.data;
+
   if (!accessToken) {
     throw new Error("No access token returned from API");
   }
-
-  const { accessToken, ...userProfile } = json.data;
 
   save(STORAGE_KEY.token, accessToken);
   save(STORAGE_KEY.user, userProfile);
