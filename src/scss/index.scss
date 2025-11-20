@@ -56,6 +56,37 @@ body {
   height: 2rem;
 }
 
+@media (max-width: 991px) {
+  .logo-img {
+    height: 80px;
+    width: auto;
+    margin-left: 20px;
+  }
+
+  .navbar-nav {
+    align-items: flex-end !important;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: right !important;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    margin: 0px;
+    font-size: 1.25rem;
+  }
+}
+
 // Pet listing/homepage
 .search-container {
   display: flex;
@@ -100,9 +131,13 @@ img.rounded-circle:hover {
   transform: translateY(-2px);
 }
 
-@media (min-width: 992px) {
-  #display-pets-container p {
-    font-size: 1.1rem;
+.pets-grid p.pet-name {
+  font-size: 30px;
+}
+
+@media (max-width: 992px) {
+  .search-section {
+    justify-content: center !important;
   }
 }
 
@@ -144,8 +179,6 @@ img.rounded-circle:hover {
   max-width: 960px;
   width: 100%;
   padding: 2.5rem 3rem;
-  border-radius: 24px;
-  background-color: var(--your-light-bg);
 }
 
 .copy-toast {
@@ -175,6 +208,14 @@ img.rounded-circle:hover {
   border: none;
 }
 
+@media (max-width: 991px) {
+  .pet-specs,
+  .pet-name {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 // Registration Page/ Login Page
 
 .sign-in-link,
@@ -188,32 +229,11 @@ img.rounded-circle:hover {
 .form-select,
 .btn {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  padding: 12px 14px; /* More internal spacing */
-  border-radius: 8px; /* Softer edges */
+  padding: 12px 14px;
+  border-radius: 8px;
 }
 
 .form-control:focus {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   border-color: #666;
-}
-
-// Other screensizes
-@media (max-with: 991px) {
-  .logo-img {
-    height: 80px;
-    width: auto;
-    margin-left: 20px;
-  }
-
-  @media (max-width: 991px) {
-    .navbar-nav {
-      align-items: flex-end !important;
-    }
-
-    .navbar-nav .nav-item {
-      width: 100%;
-      text-align: right !important;
-      padding-right: 1rem;
-    }
-  }
 }
