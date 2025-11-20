@@ -36,18 +36,14 @@ Account Register Page
 
 ## Built with
 
-JavaScript Logo Vanilla JavaScript
-Bootstrap Logo Bootstrap for CSS Framework
-Netlify Logo Netlify as a hosting service
-Figma Logo Figma for design
-Trello Logo Trello for the Trello board
-GitHub Project Logo GitHub Projects for the Ghantt Chart
+- JavaScript Logo Vanilla JavaScript
+- Bootstrap Logo Bootstrap for CSS Framework
+- Netlify Logo Netlify as a hosting service
+- Figma Logo Figma for design
+- Trello Logo Trello for the Trello board
+- GitHub Project Logo GitHub Projects for the Ghantt Chart
 
 ## Getting Started
-
-### Dependencies
-
-Install Node.js
 
 ### Installing
 
@@ -59,7 +55,15 @@ To get started with this project, follow these steps:
 git clone https://github.com/elinkrull/semester-project-2-resit.git
 ```
 
+### Dependencies
+
+Make sure that you have downloaded Node.js on your computer.
+
 2. Install the dependencies
+
+```bash
+npm install
+```
 
 ```bash
 npm install bootstrap
@@ -72,6 +76,13 @@ To run the application:
 ```bash
 npm run build
 ```
+
+Use the live server to open the website in the browser by clicking on "open in liveserver button" in VSC.
+
 ## Authors
 
 Elin Thoen jakobsen
+
+## Contact
+
+[My Linkedin page](https://www.linkedin.com/in/elin-thoen-jakobsen-2224a2264/)
