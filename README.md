@@ -36,6 +36,17 @@ Account Register Page
 
 ## Built with
 
+<p>
+   <img src="https://cdn.simpleicons.org/html5/E34F26" width="24" />
+  <img src="https://cdn.simpleicons.org/javascript/F7DF1E" width="24" />
+  <img src="https://cdn.simpleicons.org/bootstrap/7952B3" width="24" />
+  <img src="https://cdn.simpleicons.org/figma/F24E1E" width="24" />
+  <img src="https://cdn.simpleicons.org/trello/0052CC" width="24" />
+  <img src="https://cdn.simpleicons.org/github/181717" width="24" />
+  <img src="https://cdn.simpleicons.org/netlify/00C7B7" width="24" />
+</p>
+
+
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) Vanilla JavaScript
 - Bootstrap Logo Bootstrap for CSS Framework
 - Netlify Logo Netlify as a hosting service
