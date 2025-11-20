@@ -97,7 +97,7 @@ function renderSinglePet(pet) {
   const specs = document.createElement("div");
   specs.className = "pet-specs";
 
-  const nameHeading = document.createElement("h2");
+  const nameHeading = document.createElement("h1");
   nameHeading.className = "pet-name mb-4";
   nameHeading.textContent = pet.name ?? "Unnamed pet";
 
@@ -108,7 +108,7 @@ function renderSinglePet(pet) {
   addSpecRow(
     specs,
     "Description",
-    pet.description ?? "No description available.",
+    pet.description ?? "No description available."
   );
 
   right.append(nameHeading, specs);

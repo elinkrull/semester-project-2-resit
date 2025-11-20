@@ -175,6 +175,13 @@ img.rounded-circle:hover {
   border: none;
 }
 
+// Registration Page/ Login Page
+
+.sign-in-link,
+.register-link {
+  color: $tertiary;
+}
+
 // Create pet page
 
 .form-control,
