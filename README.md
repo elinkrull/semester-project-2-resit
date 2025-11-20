@@ -46,13 +46,13 @@ Account Register Page
   <img src="https://cdn.simpleicons.org/netlify/00C7B7" width="24" />
 </p>
 
-
-- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge) Vanilla JavaScript
-- Bootstrap Logo Bootstrap for CSS Framework
-- Netlify Logo Netlify as a hosting service
-- ![Figma](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white&style=for-the-badge) Figma for design
-- Trello Logo Trello for the Trello board
-- GitHub Project Logo GitHub Projects for the Ghantt Chart
+- HTML
+- Vanilla JavaScript
+- Bootstrap for CSS Framework
+- Netlify as a hosting service
+- Figma for design
+- Trello for the Trello board
+- GitHub Projects for the Ghantt Chart
 
 ## Getting Started
 
