@@ -46,19 +46,16 @@ function renderSinglePet(pet) {
 
   const editBtn = document.createElement("a");
   editBtn.className = "btn btn-outline-dark btn-sm w-auto";
+  editBtn.id = "edit-btn";
   editBtn.href = `../edit-pet/index.html?id=${encodeURIComponent(pet.id)}`;
   editBtn.textContent = "Edit Pet";
 
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "btn btn-outline-danger btn-sm w-auto";
+  deleteBtn.id = "delete-btn";
   deleteBtn.textContent = "Delete Pet";
 
-  const closeBtn = document.createElement("a");
-  closeBtn.className = "btn btn-outline-dark btn-sm w-auto";
-  closeBtn.href = "../index.html";
-  closeBtn.textContent = "Close";
-
-  actions.append(closeBtn, editBtn, deleteBtn);
+  actions.append(deleteBtn, editBtn);
 
   const row = document.createElement("div");
   row.className = "row align-items-center gy-4 gx-5";
@@ -111,7 +108,7 @@ function renderSinglePet(pet) {
   addSpecRow(
     specs,
     "Description",
-    pet.description ?? "No description available.",
+    pet.description ?? "No description available."
   );
 
   right.append(nameHeading, specs);
