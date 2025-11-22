@@ -11,6 +11,31 @@ if (!token) {
 
 const form = document.getElementById("add-pet-form");
 
+function showMessage(message, { redirectUrl = null, autoHideMs = 2500 } = {}) {
+  const box = document.getElementById("messageBox");
+  const txt = document.getElementById("messageText");
+
+  if (!box || !txt) {
+    alert(message);
+    if (redirectUrl) window.location.href = redirectUrl;
+    return;
+  }
+
+  txt.textContent = message;
+  box.classList.remove("hidden");
+
+  const timeoutId = setTimeout(() => {
+    box.classList.add("hidden");
+    if (redirectUrl) window.location.href = redirectUrl;
+  }, autoHideMs);
+
+  box.onclick = () => {
+    clearTimeout(timeoutId);
+    box.classList.add("hidden");
+    if (redirectUrl) window.location.href = redirectUrl;
+  };
+}
+
 if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -36,10 +61,12 @@ if (form) {
 
     try {
       await addPet(petData);
-      alert("Pet added successfully!");
-      window.location.href = "../index.html";
+      showMessage("Pet added successfully!", {
+        redirectUrl: "../index.html",
+        autoHideMs: 2000,
+      });
     } catch (error) {
-      alert(`Failed to add pet: ${error.message || "Please try again."}`);
+      showMessage(`Failed to add pet: ${error.message || "Please try again."}`);
     }
   });
 }

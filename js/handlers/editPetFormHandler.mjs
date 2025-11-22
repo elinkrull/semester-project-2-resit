@@ -4,6 +4,25 @@ import { editPet } from "../api/editPet.mjs";
 import { STORAGE_KEY } from "../api/constants.mjs";
 import { setupLogout, updateNavbarAuth } from "../events/onAuth.mjs";
 
+function showMessage(message, { redirectUrl = null, autoHideMs = 2000 } = {}) {
+  const box = document.getElementById("messageBox");
+  const txt = document.getElementById("messageText");
+
+  txt.textContent = message;
+  box.classList.remove("hidden");
+
+  const timeoutId = setTimeout(() => {
+    box.classList.add("hidden");
+    if (redirectUrl) window.location.href = redirectUrl;
+  }, autoHideMs);
+
+  box.onclick = () => {
+    clearTimeout(timeoutId);
+    box.classList.add("hidden");
+    if (redirectUrl) window.location.href = redirectUrl;
+  };
+}
+
 const token = load(STORAGE_KEY.token);
 if (!token) {
   alert("Please log in.");
@@ -61,13 +80,14 @@ form.addEventListener("submit", async (event) => {
 
   try {
     await editPet(id, updatedPet);
-    alert("Pet updated!");
-    window.location.href = `../singlePet/index.html?id=${encodeURIComponent(
-      id,
-    )}`;
+
+    showMessage("Pet updated!", {
+      redirectUrl: `../singlePet/index.html?id=${encodeURIComponent(id)}`,
+      autoHideMs: 2500,
+    });
   } catch (error) {
     console.error(error);
-    alert("Could not update the pet.");
+    showMessage("Could not update the pet. Please try again.");
   }
 });
 
