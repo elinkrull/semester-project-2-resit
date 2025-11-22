@@ -1,7 +1,8 @@
 # AdoptApet - Semester Project 2
 
-![compressed_image](https://github.com/user-attachments/assets/20e232a5-4798-4e64-afb6-751f91d8b97c)
+🌐 **Live Demo:**https://semester-project2-resit.netlify.app/
 
+![compressed_image](https://github.com/user-attachments/assets/20e232a5-4798-4e64-afb6-751f91d8b97c)
 
 ## Description
 
@@ -12,26 +13,32 @@ Working with the official API documentation, plan, design and build a modern fro
 ## User Stories
 
 Pets Listing Page
+
 - As a user, I want to view a grid of available pets so I can easily browse them.
 - As a user, I want to click on a pet to view more detailed information.
 - As a user, I want to search for a pet.
 
 Specific Pet Page
+
 - As a user, I want to see detailed information about the pet, that includes name, - breed, age, size, color, and description.
 - As a user, I want to have a shareable URL of the specific pet that gets copied to the clipboard when I click on a ‘share’ icon.
 
 Create Pet Page
+
 - As an admin, I want to add new pets to the adoption list by filling out a form with details like name, breed, age, size, description, and image.
 - This form should only be accessible to logged-in admins.
 
 Edit Pet Page
+
 - As an admin, I want to edit a pet's information through a form that updates the pet's details.
 - As an admin, I want to delete a pet from the adoption list if necessary.
 
 Account Login Page
+
 - As an admin, I want to log in securely using my email and password.
 
 Account Register Page
+
 - As an admin, I want to register by providing my name, email and password.
 
 ## Built with
@@ -46,7 +53,7 @@ Account Register Page
   <img src="https://cdn.simpleicons.org/netlify/00C7B7" width="24" />
 </p>
 
-- HTML
+- HTML5
 - Vanilla JavaScript
 - Bootstrap for CSS Framework
 - Netlify as a hosting service
@@ -72,17 +79,15 @@ Make sure that you have downloaded Node.js on your computer.
 
 2. Install the dependencies
 
+- This installs Bootstrap, Sass, ESLint, Prettier.
+
 ```bash
 npm install
 ```
 
-```bash
-npm install bootstrap
-```
-
 ### Running
 
-To run the application:
+Compile Sass
 
 ```bash
 npm run build
