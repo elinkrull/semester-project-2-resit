@@ -106,6 +106,9 @@ function renderSinglePet(pet) {
   addSpecRow(specs, "Age", pet.age);
   addSpecRow(specs, "Size", pet.size);
   addSpecRow(specs, "Color", pet.color);
+  addSpecRow(specs, "Gender", pet.gender);
+  addSpecRow(specs, "Adoption status", pet.adoptionStatus);
+  addSpecRow(specs, "Location", pet.location);
   addSpecRow(
     specs,
     "Description",

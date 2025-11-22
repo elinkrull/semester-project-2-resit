@@ -17,6 +17,7 @@ export function renderPets(list) {
 
   list.forEach((pet) => {
     const name = pet.name ?? "Unnamed pet";
+    const description = pet.description ?? "No description available.";
     const id = pet.id;
     const rawUrl = pet.image?.url;
     const altText = pet.image?.alt || "Pet image";
@@ -48,7 +49,11 @@ export function renderPets(list) {
     p.className = "mt-4 fw-bold pet-name";
     p.textContent = name;
 
-    link.append(img, p);
+    const desc = document.createElement("p"); // 👈 new
+    desc.className = "pet-card-description mt-2 mb-0";
+    desc.textContent = description;
+
+    link.append(img, p, desc);
     col.appendChild(link);
     row.appendChild(col);
   });
