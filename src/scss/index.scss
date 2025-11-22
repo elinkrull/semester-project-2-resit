@@ -4,7 +4,8 @@
 
 //Override Bootstrap variables
 $primary: rgba(235, 238, 234, 1);
-$secondary: rgb(186, 202, 192);
+$secondary: rgba(214, 216, 195, 1);
+$tertiary: rgba(63, 92, 75, 1);
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
@@ -12,8 +13,20 @@ $secondary: rgb(186, 202, 192);
 
 // Custom styles
 body {
-  font-family: "Josefin Sans", sans-serif !important;
+  font-family: "Josefin Sans", sans-serif;
   padding-top: 160px;
+}
+
+header {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+h1 {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+.btn {
+  background-color: $secondary;
 }
 
 .logo-img {
@@ -49,6 +62,37 @@ body {
   transform: scale(1.6);
   width: 2rem;
   height: 2rem;
+}
+
+@media (max-width: 991px) {
+  .logo-img {
+    height: 80px;
+    width: auto;
+    margin-left: 20px;
+  }
+
+  .navbar-nav {
+    align-items: flex-end !important;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: right !important;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    margin: 0px;
+    font-size: 1.25rem;
+  }
 }
 
 // Pet listing/homepage
@@ -95,9 +139,25 @@ img.rounded-circle:hover {
   transform: translateY(-2px);
 }
 
-@media (min-width: 992px) {
-  #display-pets-container p {
-    font-size: 1.1rem;
+.all-pets-header {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.pets-grid p.pet-name {
+  font-size: 20px;
+}
+
+.pet-card-description {
+  font-size: 0.9rem;
+  max-width: 14rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 992px) {
+  .search-section {
+    justify-content: center !important;
   }
 }
 
@@ -131,16 +191,14 @@ img.rounded-circle:hover {
 
 .pet-name {
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 18px;
   letter-spacing: 0.5px;
 }
 
 .pet-detail-card {
   max-width: 960px;
   width: 100%;
-  padding: 2.5rem 3rem;
-  border-radius: 24px;
-  background-color: var(--your-light-bg);
+  padding: 30px;
 }
 
 .copy-toast {
@@ -163,25 +221,38 @@ img.rounded-circle:hover {
   opacity: 1;
 }
 
-//Create pet page
+#edit-btn,
+#delete-btn {
+  padding: 6px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: none;
+}
 
-// Other screensizes
-@media (max-with: 991px) {
-  .logo-img {
-    height: 80px;
-    width: auto;
-    margin-left: 20px;
+@media (max-width: 991px) {
+  .pet-name {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
+}
 
-  @media (max-width: 991px) {
-    .navbar-nav {
-      align-items: flex-end !important;
-    }
+// Registration Page/ Login Page
 
-    .navbar-nav .nav-item {
-      width: 100%;
-      text-align: right !important;
-      padding-right: 1rem;
-    }
-  }
+.sign-in-link,
+.register-link {
+  color: $tertiary;
+}
+
+// Create pet page
+
+.form-control,
+.form-select,
+.btn {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-color: #666;
 }

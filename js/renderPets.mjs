@@ -17,6 +17,7 @@ export function renderPets(list) {
 
   list.forEach((pet) => {
     const name = pet.name ?? "Unnamed pet";
+    const description = pet.description ?? "No description available.";
     const id = pet.id;
     const rawUrl = pet.image?.url;
     const altText = pet.image?.alt || "Pet image";
@@ -24,7 +25,7 @@ export function renderPets(list) {
       rawUrl && rawUrl.trim() !== "" ? rawUrl.trim() : placeholderUrl;
 
     const col = document.createElement("div");
-    col.className = "col-12 col-sm-4 col-md-3 col-lg-2-4 text-center mb-5";
+    col.className = "col-12 col-sm-4 col-lg-3 text-center mb-5";
 
     const link = document.createElement("a");
     link.href = `./singlePet/index.html?id=${encodeURIComponent(id)}`;
@@ -45,10 +46,14 @@ export function renderPets(list) {
     });
 
     const p = document.createElement("p");
-    p.className = "mt-2 fw-bold";
+    p.className = "mt-4 fw-bold pet-name";
     p.textContent = name;
 
-    link.append(img, p);
+    const desc = document.createElement("p");
+    desc.className = "pet-card-description mt-2 mb-0";
+    desc.textContent = description;
+
+    link.append(img, p, desc);
     col.appendChild(link);
     row.appendChild(col);
   });

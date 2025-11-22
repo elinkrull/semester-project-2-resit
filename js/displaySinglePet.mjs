@@ -36,35 +36,32 @@ function renderSinglePet(pet) {
   const altText = pet.image?.alt || pet.name || "Pet";
 
   const outer = document.createElement("div");
-  outer.className = "container-lg py-5 d-flex justify-content-center";
+  outer.className = "container-lg d-flex justify-content-center";
 
   const card = document.createElement("div");
   card.className = "pet-detail-card";
 
   const actions = document.createElement("div");
-  actions.className = "d-flex flex-column align-items-end gap-2 mb-4";
+  actions.className = "d-flex flex-column align-items-end gap-4 mb-4";
 
   const editBtn = document.createElement("a");
   editBtn.className = "btn btn-outline-dark btn-sm w-auto";
+  editBtn.id = "edit-btn";
   editBtn.href = `../edit-pet/index.html?id=${encodeURIComponent(pet.id)}`;
-  editBtn.textContent = "Edit Pet";
+  editBtn.textContent = "Edit";
 
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "btn btn-outline-danger btn-sm w-auto";
-  deleteBtn.textContent = "Delete Pet";
+  deleteBtn.id = "delete-btn";
+  deleteBtn.textContent = "Delete";
 
-  const closeBtn = document.createElement("a");
-  closeBtn.className = "btn btn-outline-dark btn-sm w-auto";
-  closeBtn.href = "../index.html";
-  closeBtn.textContent = "Close";
-
-  actions.append(closeBtn, editBtn, deleteBtn);
+  actions.append(deleteBtn, editBtn);
 
   const row = document.createElement("div");
   row.className = "row align-items-center gy-4 gx-5";
 
   const left = document.createElement("div");
-  left.className = "col-12 col-md-5 text-center";
+  left.className = "col-12 col-lg-5 text-center";
 
   const heroWrap = document.createElement("div");
   heroWrap.className = "pet-hero-wrap mx-auto";
@@ -84,7 +81,8 @@ function renderSinglePet(pet) {
 
   const shareBtn = document.createElement("button");
   shareBtn.type = "button";
-  shareBtn.className = "btn btn-outline-dark mt-4 px-4";
+  shareBtn.className =
+    "btn btn-outline-dark mt-4 px-4 d-flex justify-content-center mx-auto";
 
   const icon = document.createElement("span");
   icon.className = "bi bi-share me-2";
@@ -95,12 +93,12 @@ function renderSinglePet(pet) {
   left.append(heroWrap, shareBtn);
 
   const right = document.createElement("div");
-  right.className = "col-12 col-md-7 ps-md-5";
+  right.className = "col-12 col-lg-7 ps-lg-5";
 
   const specs = document.createElement("div");
   specs.className = "pet-specs";
 
-  const nameHeading = document.createElement("h2");
+  const nameHeading = document.createElement("h1");
   nameHeading.className = "pet-name mb-4";
   nameHeading.textContent = pet.name ?? "Unnamed pet";
 
@@ -108,10 +106,13 @@ function renderSinglePet(pet) {
   addSpecRow(specs, "Age", pet.age);
   addSpecRow(specs, "Size", pet.size);
   addSpecRow(specs, "Color", pet.color);
+  addSpecRow(specs, "Gender", pet.gender);
+  addSpecRow(specs, "Adoption status", pet.adoptionStatus);
+  addSpecRow(specs, "Location", pet.location);
   addSpecRow(
     specs,
     "Description",
-    pet.description ?? "No description available.",
+    pet.description ?? "No description available."
   );
 
   right.append(nameHeading, specs);
