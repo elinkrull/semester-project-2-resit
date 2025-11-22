@@ -49,7 +49,7 @@ export function renderPets(list) {
     p.className = "mt-4 fw-bold pet-name";
     p.textContent = name;
 
-    const desc = document.createElement("p"); // 👈 new
+    const desc = document.createElement("p");
     desc.className = "pet-card-description mt-2 mb-0";
     desc.textContent = description;
 
