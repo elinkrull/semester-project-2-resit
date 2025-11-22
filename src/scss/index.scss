@@ -242,7 +242,7 @@ img.rounded-circle:hover {
   color: $tertiary;
 }
 
-// Create pet page
+// Add pet page
 
 .form-control,
 .form-select,
@@ -255,4 +255,48 @@ img.rounded-circle:hover {
 .form-control:focus {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   border-color: #666;
+}
+
+.message-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.message-box.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.message-box-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#messageCloseBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#messageCloseBtn:hover {
+  background: #000;
 }
