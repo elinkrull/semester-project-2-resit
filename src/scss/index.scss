@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mochiy+Pop+One&display=swap");
+
+@import "../../node_modules/bootstrap/scss/functions";
+
+//Override Bootstrap variables
+$primary: rgba(235, 238, 234, 1);
+$secondary: rgba(214, 216, 195, 1);
+$tertiary: rgba(63, 92, 75, 1);
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Custom styles
+body {
+  font-family: "Josefin Sans", sans-serif;
+  padding-top: 160px;
+}
+
+header {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+h1 {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+.btn {
+  background-color: $secondary;
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  margin-left: 30px;
+}
+
+.nav-link {
+  margin-right: 3rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.nav-link:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+#nav-logout {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  margin-right: 40px;
+}
+
+.navbar-toggler-icon {
+  transform: scale(1.6);
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (max-width: 991px) {
+  .logo-img {
+    height: 80px;
+    width: auto;
+    margin-left: 20px;
+  }
+
+  .navbar-nav {
+    align-items: flex-end !important;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: right !important;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    margin: 0px;
+    font-size: 1.25rem;
+  }
+}
+
+// Pet listing/homepage
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 350px;
+}
+
+.search-input {
+  height: 40px;
+  border-radius: 30px;
+  padding-left: 30px;
+  margin-top: 30px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#display-pets-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+img.rounded-circle {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+img.rounded-circle:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#view-more-btn {
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+#view-more-btn:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+.all-pets-header {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.pets-grid p.pet-name {
+  font-size: 20px;
+}
+
+.pet-card-description {
+  font-size: 0.9rem;
+  max-width: 14rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 992px) {
+  .search-section {
+    justify-content: center !important;
+  }
+}
+
+//Single pet page by it`s ID
+
+.pet-hero-wrap {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  padding: 6px;
+  border: 3px solid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-specs .row {
+  margin-bottom: 0.75rem;
+}
+
+.pet-specs .col-4 {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.pet-name {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.pet-detail-card {
+  max-width: 960px;
+  width: 100%;
+  padding: 30px;
+}
+
+.copy-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.copy-toast.show {
+  opacity: 1;
+}
+
+#edit-btn,
+#delete-btn {
+  padding: 6px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+@media (max-width: 991px) {
+  .pet-name {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+// Registration Page/ Login Page
+
+.sign-in-link,
+.register-link {
+  color: $tertiary;
+}
+
+// Create pet page
+
+.form-control,
+.form-select,
+.btn {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-color: #666;
+}
